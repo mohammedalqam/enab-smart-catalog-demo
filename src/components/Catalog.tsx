@@ -41,7 +41,7 @@ export default function Catalog() {
   useEffect(() => { if (!toast) return; const timer = setTimeout(() => setToast(""), 2500); return () => clearTimeout(timer); }, [toast]);
   useEffect(() => {
     try { const stored: unknown = JSON.parse(localStorage.getItem(catalogConfig.recentStorageKey) || "[]"); if (Array.isArray(stored)) setRecentIds([...new Set(stored.filter((id): id is string => typeof id === "string" && productMap.has(id)))].slice(0, 4)); } catch { /* Ignore damaged recent history. */ }
-    function shortcut(event: KeyboardEvent) { const target = event.target as HTMLElement; if (event.key === "/" && !["INPUT", "TEXTAREA", "SELECT"].includes(target.tagName) && !target.isContentEditable && !document.querySelector("dialog[open]")) { event.preventDefault(); document.getElementById("catalog")?.scrollIntoView({ behavior: "smooth" }); inputRef.current?.focus({ preventScroll: true }); } }
+    function shortcut(event: KeyboardEvent) { const target = event.target as HTMLElement; if (event.key === "/" && !["INPUT", "TEXTAREA", "SELECT"].includes(target.tagName) && !target.isContentEditable && !document.querySelector("dialog[open]")) { event.preventDefault(); document.getElementById("catalog")?.scrollIntoView({ behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth" }); inputRef.current?.focus({ preventScroll: true }); } }
     function scroll() { setScrolled(window.scrollY > 750); }
     window.addEventListener("keydown", shortcut); window.addEventListener("scroll", scroll, { passive: true });
     return () => { window.removeEventListener("keydown", shortcut); window.removeEventListener("scroll", scroll); };
