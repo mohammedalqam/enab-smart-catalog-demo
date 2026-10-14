@@ -47,7 +47,7 @@ export default function Catalog() {
     return () => { window.removeEventListener("keydown", shortcut); window.removeEventListener("scroll", scroll); };
   }, []);
   return <LazyMotion features={domAnimation} strict><Header total={list.total} onSearch={focusSearch} onList={() => setPanel("list")} /><main>
-    <m.div initial={reducedMotion ? false : { opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45 }}><HeroSection onSearch={focusSearch} /></m.div>
+    <m.div initial={reducedMotion ? false : { opacity: 1, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.45 }}><HeroSection onSearch={focusSearch} /></m.div>
     <div className="flavor-ribbon" aria-hidden="true"><span>SWEET FINDS</span><span>✳</span><span>على ذوقك</span><span>✳</span><span>GOOD MOOD</span><span>✳</span><span>اختيارات بتحبها</span><span>✳</span><span>SWEET FINDS</span><span>✳</span></div>
     <section id="catalog" className="catalog-section container" aria-labelledby="catalog-title"><div className="catalog-heading"><div><div className="eyebrow">اكتشف مزاجك اليوم</div><h2 id="catalog-title">شو عبالك اليوم؟ <span aria-hidden="true">✳</span></h2></div><p>من أول بحث… للّقمة اللي بتحبها.</p></div>
       <SearchBar query={query} onChange={setQuery} inputRef={inputRef} />
