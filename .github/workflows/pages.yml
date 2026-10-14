@@ -2,6 +2,7 @@ name: Publish catalog concept preview
 on:
   push:
     branches: [main]
+    paths-ignore: ['**/*.md', 'docs/**']
   workflow_dispatch:
 permissions:
   contents: read

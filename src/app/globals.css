@@ -242,5 +242,5 @@ mark { color:inherit; background:var(--yellow); padding:0 1px; border-radius:3px
 @media(prefers-reduced-motion:reduce) {
   html { scroll-behavior:auto; } *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; scroll-behavior:auto!important; }.product-card:hover,.button:hover { transform:none!important; }
 }
-@media(max-width:640px){.product-copy p{font-size:12px;min-height:46px}.add-button{font-size:12px;min-height:44px}.product-category{font-size:11px}.search-suggestions button{min-height:44px}}
+@media(max-width:640px){.hero{padding-block:18px 22px;gap:16px}.hero h1{font-size:32px;line-height:1.6}.hero-copy>p{margin-bottom:12px}.hero-benefits{margin-top:12px}.hero-visual,.hero-image-frame{height:160px}.product-copy p{font-size:12px;min-height:46px}.add-button{font-size:12px;min-height:44px}.product-category{font-size:11px}.search-suggestions button{min-height:44px}}
 @media(max-width:359px){.product-copy h3{font-size:14px}.add-button{font-size:11px}.product-copy p{font-size:12px}}
